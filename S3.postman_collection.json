@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "71c0005f-741d-4a39-9833-f6a9cc0bc7c8",
+		"name": "S3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "artifactFile",
+							"type": "file",
+							"src": "/Users/jayadnure/Downloads/untitled folder 6/bottles_3"
+						},
+						{
+							"key": "artifactName",
+							"value": "bottle_3",
+							"type": "text"
+						},
+						{
+							"key": "folderName",
+							"value": "packages",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/uploadArtifact",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"uploadArtifact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getArtifacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/getArtifacts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getArtifacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllArtifacts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/deleteAllArtifacts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"deleteAllArtifacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadArtifact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"artifactName\":\"OBJ/Bottle_s.obj\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/downloadArtifact",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"downloadArtifact"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
